@@ -110,14 +110,14 @@
                 drawLine( output, x1, y2, x2, y2 );
                 drawLine( output, x1, y1, x1, y2 );
 
-                glasses.position.x = face.annotations.midwayBetweenEyes[ 0 ][ 0 ];
-                glasses.position.y = -face.annotations.midwayBetweenEyes[ 0 ][ 1 ];
-                glasses.position.z = -camera.position.z + face.annotations.midwayBetweenEyes[ 0 ][ 2 ];
+                glasses.position.x = face.annotations.lipsUpperOuter[ 0 ][ 0 ];
+                glasses.position.y = -face.annotations.lipsUpperOuter[ 0 ][ 1 ];
+                glasses.position.z = -camera.position.z + face.annotations.lipsUpperOuter[ 0 ][ 2 ];
 
                 // Calculate an Up-Vector using the eyes position and the bottom of the nose
-                glasses.up.x = face.annotations.midwayBetweenEyes[ 0 ][ 0 ] - face.annotations.noseBottom[ 0 ][ 0 ];
-                glasses.up.y = -( face.annotations.midwayBetweenEyes[ 0 ][ 1 ] - face.annotations.noseBottom[ 0 ][ 1 ] );
-                glasses.up.z = face.annotations.midwayBetweenEyes[ 0 ][ 2 ] - face.annotations.noseBottom[ 0 ][ 2 ];
+                glasses.up.x = face.annotations.lipsUpperOuter[ 0 ][ 0 ] - face.annotations.noseBottom[ 0 ][ 0 ];
+                glasses.up.y = -( face.annotations.lipsUpperOuter[ 0 ][ 1 ] - face.annotations.noseBottom[ 0 ][ 1 ] );
+                glasses.up.z = face.annotations.lipsUpperOuter[ 0 ][ 2 ] - face.annotations.noseBottom[ 0 ][ 2 ];
                 const length = Math.sqrt( glasses.up.x ** 2 + glasses.up.y ** 2 + glasses.up.z ** 2 );
                 glasses.up.x /= length;
                 glasses.up.y /= length;
